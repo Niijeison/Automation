@@ -1,0 +1,6 @@
+
+#Restore the databases for Tariq
+sudo mysql < ~/knotify_mysql_backup_2026-04-07.sql
+
+sudo mysql -e "SHOW DATABASES;"
+
