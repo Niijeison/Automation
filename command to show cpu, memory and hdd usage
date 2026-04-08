@@ -1,0 +1,3 @@
+echo "CPU:" && top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8 "% used"}' && \
+echo -e "\nMemory:" && free | awk '/Mem:/ {printf("%.2f%% used\n", $3/$2 * 100)}' && \
+echo -e "\nDisk:" && df -h | awk 'NR>1 {print $5 " used on " $1}'
