@@ -1,3 +1,9 @@
 echo "CPU:" && top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8 "% used"}' && \
 echo -e "\nMemory:" && free | awk '/Mem:/ {printf("%.2f%% used\n", $3/$2 * 100)}' && \
 echo -e "\nDisk:" && df -h | awk 'NR>1 {print $5 " used on " $1}'
+
+
+
+
+
+echo "=== CPU Usage ===" && top -bn1 | grep "Cpu(s)" | awk '{print "Used: " 100-$8"%  |  Idle: "$8"%"}' && echo -e "\n=== Memory Usage ===" && free | awk 'NR==2{printf "Used: %.1f%%  |  Free: %.1f%%\n", $3/$2*100, $4/$2*100}' && echo -e "\n=== Disk Usage ===" && df -h | grep -vE '^tmpfs|^udev|^none|^devtmpfs' | awk 'NR>1{print $6": Used="$5" Free="int(($4/$2)*100)"%"}'
