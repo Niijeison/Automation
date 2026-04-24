@@ -1,0 +1,12 @@
+######python installation#######
+curl -Ls https://astral.sh/uv/install.sh | sh
+uv new to install python packages
+
+
+#### Start Virtual Environment #######
+source .venv/bin/activate
+
+###### Run Script to Create Database #######
+python  manage_user.py --admin-password root12345@ skoy
+
+
