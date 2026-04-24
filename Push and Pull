@@ -1,0 +1,5 @@
+##### clear Log Files#####
+cat  /dev/null > bearerbox.log
+
+#####Path to logfile#########
+/var/log/nanzo
